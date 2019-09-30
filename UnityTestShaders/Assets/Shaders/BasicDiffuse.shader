@@ -3,7 +3,10 @@
     Properties
     {
         _Color ("Color", Color) = (1,1,1,1)
-        _MainTex ("Albedo (RGB)", 2D) = "white" {}
+		_MainTex("Albedo (RGB)", 2D) = "white" {}
+		_EmissiveColor ("Emissive Color", Color) = (0,1,1,1)
+		_AmbientColor ("Ambient Color", Color) = (1,1,1,1)
+		_MySliderValue ("My slider value", Range(0,1)) = 0.2
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
     }
