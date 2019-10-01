@@ -7,6 +7,7 @@
 		_EmissiveColor ("Emissive Color", Color) = (0,1,1,1)
 		_AmbientColor ("Ambient Color", Color) = (1,1,1,1)
 		_MySliderValue ("My slider value", Range(0,10)) = 2.4
+		_MySliderValuePow ("My mp", Range(0,100)) = 2.4
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
         _Resolution ("Resolution", Vector) = (1,1,1,1)
@@ -20,14 +21,14 @@
         float4 _EmissiveColor;
         float4 _AmbientColor;
         float _MySliderValue;
-        
+        float _MySliderValuePow;
         #pragma surface surf BasicDiffuse 
 
-		inline float4 LightingBasicDiffuse (SurfaceOutput s, fixed3 lightDir, fixed atten)
+		inline float4 LightingBasicDiffuse (SurfaceOutput s, fixed3 lightDir, half3 viewDir, fixed atten)
         {
-            float difLight = max(0, dot(s.Normal, lightDir));
+            float difLight = max(0, dot(s.Normal, viewDir));
             float4 col;
-            col.rgb = s.Albedo * _LightColor0.rgb * (difLight * atten * 2);
+            col.rgb = pow(s.Albedo * _LightColor0.rgb * (difLight * atten * _MySliderValue), _MySliderValuePow);
             col.a = s.Alpha;
             return col;
         }
