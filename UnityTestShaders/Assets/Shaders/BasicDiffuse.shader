@@ -28,7 +28,7 @@
         {
             float difLight = max(0, dot(s.Normal, viewDir));
             float4 col;
-            col.rgb = pow(s.Albedo * _LightColor0.rgb * (difLight * atten * _MySliderValue), _MySliderValuePow);
+            col.rgb = s.Albedo * pow(_LightColor0.rgb * (difLight * atten * _MySliderValue), _MySliderValuePow);
             col.a = s.Alpha;
             return col;
         }
@@ -38,7 +38,7 @@
         sampler2D _MainTex;
         
         struct Input
-        {
+        {  
             float2 uv_MainTex;
         };
 
@@ -47,7 +47,7 @@
         fixed4 _Color;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
-// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
+        // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
         #pragma instancing_options assumeuniformscaling
         UNITY_INSTANCING_BUFFER_START(Props)
             // put more per-instance properties here
