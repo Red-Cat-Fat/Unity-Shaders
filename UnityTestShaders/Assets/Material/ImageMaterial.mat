@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HalfLambert
-  m_Shader: {fileID: 4800000, guid: 2d03f3251c546574d9d9bb0af8ba16d7, type: 3}
+  m_Name: ImageMaterial
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -61,12 +61,8 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HalfLambertCoefValue: 0.247
-    - _HalfLambertMaxStepValue: 1
-    - _HalfLambertMinStepValue: 0.068
-    - _HalfLambertValue: 0.146
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
